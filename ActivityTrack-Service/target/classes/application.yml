@@ -1,0 +1,17 @@
+
+
+spring:
+  config:
+    import:
+      - optional:configserver:http://localhost:8888
+
+  cloud:
+    config:
+      profile: activity
+
+  rabbitmq:
+    virtual-host: /
+    exchange: activity.tracking
+  
+    durable: true
+    auto-delete: false
